@@ -1,4 +1,4 @@
-// Ethers JS: First interaction with (not) UniMa blockchain.
+// Ethers JS: First interaction with Hardhat blockchain.
 ////////////////////////////////////////////////////////////
 
 // Exercise 0. Load dependencies and network provider.
@@ -10,43 +10,35 @@
 // Your code here!
 
 
-// Exercise 1. Create a JSON RPC Provider for the (not) UniMa Blockchain.
-/////////////////////////////////////////////////////////////////////////
+// Exercise 1. Create a JSON RPC Provider for the Hardhat blockchain.
+/////////////////////////////////////////////////////////////////////
 
-// It seems we cannot (yet) call our blockchain the official Uni Mannheim
-// blockchain, so we will reference it throughtout the exercises as the
-// (not) UniMa Blockchain.
-
-// a. Add the RPC endpoints to the .env with names:
-// - NOT_UNIMA_URL_1
-// - NOT_UNIMA_URL_2
-
-// Hint: you find the RPC endpoints on the slides in ILIAS.
-
-// b. Create the JSON RPC provider object.
-// Hint: only accessible within UniMa network.
+// Hint: you will find the info printed to console after you start the hardhat
+// blockchain.
 
 // Your code here!
 
 // Exercise 2. Let's query the provider.
 ////////////////////////////////////////
 
-// (not) UniMa Blockchain si too long. Let's call it NUMA.
+// Hardhat Blockchain si too long. Let's call it NUMA.
 // Print to console the network name, chain id, and block number of NUMA.
 
 const networkInfo = async () => {
-    
+   
     // Your code here!
-
 };
 
 // networkInfo();
 
 
-// Exercise 3. Connect a signer to the (not) UniMa blockchain.
-//////////////////////////////////////////////////////////////
+// Exercise 3. Connect a signer to the Hardhat blockchain.
+//////////////////////////////////////////////////////////
 
-// a. Use the same non-sensitive private key used in 3_signer.js.
+// Hint: you will find the info printed to console after you start the hardhat
+// blockchain.
+
+let hhPrivateKey = "FILL_THIS_VALUE";
 
 // Your code here!
 
@@ -54,14 +46,11 @@ const networkInfo = async () => {
 // Hint: .getNonce()
 
 const getNonce = async() => {
-    
+
     // Your code here!
 };
 
 // getNonce();
-
-// Checkpoint. Is the nonce in the (not) Unima blockchain different
-// than in Goerli?
 
 
 // Exercise 4. Check gas.
@@ -75,8 +64,7 @@ const getNonce = async() => {
 
 const checkBalance = async () => {
 
-   // Your code here!
-
+    // Your code here!
 };
 
 // checkBalance();
@@ -90,10 +78,8 @@ const account2 = process.env.METAMASK_2_ADDRESS;
 
 const sendTransaction = async () => {
 
-   // Your code here!
+    // Your code here!
 };
 
 // sendTransaction();
-
-// Checkpoint. Can you send your ETH from NUMA to Goerli?
 
