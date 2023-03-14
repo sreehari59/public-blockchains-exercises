@@ -16,7 +16,7 @@
 // Ref: https://www.w3schools.com/jsref/met_win_settimeout.asp
 // Hint2: With arrow functions it can be a one-liner.
 
-setTimeout(() => console.log("Hello Brendan!"), 2000);
+setTimeout(() => console.log("Hello Brendan Stark!"), 2000);
 
 
 // b. If you solved exercise 1.a correctly you did a mistake. It is not
