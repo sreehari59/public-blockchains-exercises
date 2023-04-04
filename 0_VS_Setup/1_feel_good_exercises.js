@@ -73,7 +73,7 @@ function sayHello() {
 // or Cmd-/ (Mac). Notice if you apply the command multiple times, it will
 // uncomment/comment/uncomment... it.
 
-// uselessCode = 'I am useless';
+uselessCode = 'I am useless';
 
 // b. Cool. What other shorcuts are available? Here is a shortcut to find
 // them all. Ctrl-Shift-P. Look around and remember how to get here,
@@ -139,7 +139,7 @@ console.log(a);
 // A common rookie mistake is to forget to open or close a parenthesis,
 // causing an error. Unfortunately, these common mistakes are surprisingly
 // difficult to catch for the untrained eye and may cause acute distress
-// in the joung JavaScript programmer. To prevent or mitigate this outcome,
+// in the young JavaScript programmer. To prevent or mitigate this outcome,
 // get familiar with the VS Code built-in "Bracket Matcher" utility.
 
 // a. Position the cursor after the closing curly bracket of the following
@@ -197,7 +197,7 @@ console.log(outcome);
 
 console.log("I want to say it 10 times:");
 for (let i = 0; i < 10; i++) {
-  console.log(i + 1 + ": " + outcome);
+  console.log(i + 1 , ": " , outcome);
 }
 console.log("Mike drop.");
 
