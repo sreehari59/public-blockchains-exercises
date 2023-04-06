@@ -22,6 +22,7 @@ let printNews = (allNews) => {
 let getLatestNews = (cb) => {
   // Imagine to connect to a server and getting back the  
   setTimeout(() => {
+    // Here news is an object
     let news = [ 
       {
         id: 'news1',
@@ -32,6 +33,7 @@ let getLatestNews = (cb) => {
         title: 'Bitcoin price crashed 20%!'
       }
     ];
+    console.log('News fetched, now I can print them.');
     if (cb) cb(news);
   }, 2000);
 };

@@ -142,6 +142,7 @@ persons[3] = {
 };
 
 // Verify who is the bottom of the array.
+console.log("Verifying the bottom of array")
 console.log(persons[3]);
 
 // EXERCISE 7. Remove elements from the array of persons.
@@ -227,23 +228,30 @@ for (let property in obj) {
     }
 }
 
+obj2 = persons[1]
+for(let i in obj2){
+    if(obj2.hasOwnProperty(i)){
+        console.log(i + " : " + obj2[i])
+    }
+}
+
 // EXERCISE 10. Bonus. Constant objects.
 ///////////////////////////////////////
 // This is weird, and it takes a lot of JavaScript to understand why it is so.
 // Constant objects are not constant. For now, just embrace it.
 
-const myObject = {
-    a: 1,
-    b: 2
-};
+// const myObject = {
+//     a: 1,
+//     b: 2
+// };
 
 // Can you change the properties of constant objects? Yes.
-myObject.b = 3; // No error thrown.
+// myObject.b = 3; // No error thrown.
 // Can you add a new property to constant objects.
-myObject.c = 4; // No error thrown.
+// myObject.c = 4; // No error thrown.
 
 // Can you re-assign it? No!
-myObject = brendan; // it throws an error, it does not want to be brendan.
+// myObject = brendan; // it throws an error, it does not want to be brendan.
 
 // Explanation. Objects are pointers to memory addresses. You can change
 // the content of the address, but you can't change the address,

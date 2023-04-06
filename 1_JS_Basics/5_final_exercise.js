@@ -16,6 +16,15 @@
 // any input number. For instance, if input is 10, the result is 55.
 // Motivational Hint: This exercise is often asked at job interviews.
 
+function fib(num){
+    let fibonacci = [0,1];
+    for(let i=2;i<=num;i++){
+        fibonacci[i] = fibonacci[i-1] + fibonacci[i-2]
+    }
+    console.log(fibonacci[num]);
+}
+
+fib(10);
 
 // EXERCISE 2. Bonus. Recursive Fibonacci.
 //////////////////////////////////////////

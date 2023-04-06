@@ -50,11 +50,11 @@ promise
 // Now implement the example above in an async way.
 // Hint: setTimeout
 
-let comfortObj = 1/3;
+let comfortObjj = 1/3;
 
 promise = new Promise(function(resolve, reject) {
   setTimeout(() => {
-    if (Math.random() > comfortObj) resolve(true);
+    if (Math.random() > comfortObjj) resolve(true);
     else reject(false);
   }, 2000);
 });
@@ -73,12 +73,12 @@ promise
 // Use the finally statement to set the value of exerciseIsOver to true,
 // and if it is true and report the value to console.
 
-let comfortObj = 1/3;
+let comfortObjs = 1/3;
 let exerciseIsOver = false;
 
 promise = new Promise(function(resolve, reject) {
   setTimeout(() => {
-    if (Math.random() > comfortObj) resolve(true);
+    if (Math.random() > comfortObjs) resolve(true);
     else reject(false);
   }, 2000);   
 });

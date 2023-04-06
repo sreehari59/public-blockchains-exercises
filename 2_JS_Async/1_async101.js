@@ -33,7 +33,9 @@ timeout = setTimeout(() => console.log("Hello Bill!"), 2000);
 // to say hello to Bill without clearing the timeout.
 
 // Hint: use a third variable to hold the name of the person.
-
+person = "Brendan";
+setTimeout(() => console.log(`Hello ${person}`), 2000);
+person = "Bill";
 
 // EXERCISE 2. Intervals.
 /////////////////////////
@@ -54,4 +56,6 @@ let interval = setInterval(() => {
 
 // b. Bill, shocked by your compulsive reaction, finally says "Hello..." after
 // 10 seconds. You can then clear the interval.
+let intervals = setInterval(() => {console.log("Hey") }, 1000); // This will say Hey every 1second
+setTimeout(() => clearInterval(intervals),5000); // This will clear the interval after 5s
 

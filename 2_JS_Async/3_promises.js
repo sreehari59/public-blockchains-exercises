@@ -30,10 +30,10 @@
 // Let's write a function that is _on average_ accurate in guessing
 // if you are sleeping with a comfort object.
 
-let comfortObj = 1/3;
+let comfortObjs = 1/3;
 
 let promise = new Promise(function(resolve, reject) {
-  if (Math.random() <= comfortObj) resolve(true);
+  if (Math.random() <= comfortObjs) resolve(true);
   else reject(false);
 });
 
@@ -50,13 +50,15 @@ promise
 // Now implement the example above in an async way.
 // Hint: setTimeout
 
-let comfortObj = 1/3;
+let comfortObjj = 1/3;
 
 promise = new Promise(function(resolve, reject) {
   // Write the body of this promise.
   setTimeout(() => {
     console.log('ASYNC');
-    if (Math.random() <= comfortObj) resolve(true);
+    let num = Math.random();
+    console.log(`num ${num}`);
+    if (num<= comfortObjj) resolve(true);
     else reject(false);
   }, 2000);
 });

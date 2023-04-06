@@ -48,16 +48,26 @@ console.log(typeof null);
 // decided that the type of null is 'object'.
 // Hint. The property name must contain the full name (Brendan Eich), and
 // the property birth must contain the year in which he was born (1961).
+obj1={
+    name: "Brendan Eich",
+    year: 1961
+}
+console.log(obj1)
 
 // b. Access the properties of the person object.
-
+console.log(obj1.name)
+console.log(obj1.year)
 
 // EXERCISE 2. Add and remove properties to the person object.
 //////////////////////////////////////////////////////
 
 // Now you realize that it makes more sense to split the property 'name' into
 // two: 'first' and 'last' name. Accordingly you delete the propery name.
+obj1.firstName = "Brendan";
+obj1.lastName = "Eich";
+delete obj1.name;
 
+console.log(obj1)
 
 // EXERCISE 3. Create an array of persons.
 //////////////////////////////////////////
@@ -65,15 +75,24 @@ console.log(typeof null);
 // a. Create an array called persons containing three items.
 // You already have Brendan, now add another two inspiring personalities.
 // For example, Pablo Picasso and Napoleon Bonaparte. When are they born?
+persons  = [
+    obj1,
+    { year: 1990, firstName: 'Pablo', lastName: 'Picasso' },
+    { year: 1985, firstName: 'Napoleon', lastName: 'Bonaparte' }
+]
+console.log(persons)
 
 // b. Count how many elements are in the array.
+console.log(persons.length)
 
 // c. Access the second element of the array.
+console.log(persons[2])
 
 // Arrays are 0-indexed, that is the first element has index 0,
 // the second element 1, and so on.
 
 // d. Access the property year of the second element of the array.
+console.log(persons[0].year)
 
 // EXERCISE 4. Pick a random item in the array of persons.
 //////////////////////////////////////////////////////////
@@ -82,7 +101,10 @@ console.log(typeof null);
 // number of elements in the array, then "floor" it with the corresponding
 // method of the Math object.
 // randomNumber = ... 
+randomNumber = Math.floor(Math.random()*persons.length);
+console.log(randomNumber);
 console.log(persons[randomNumber]);
+
 
 // EXERCISE 5. Add a new elements to the array of persons.
 //////////////////////////////////////////////////////////

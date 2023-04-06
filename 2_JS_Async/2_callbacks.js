@@ -21,6 +21,7 @@ let printNews = (allNews) => {
 let getLatestNews = (cb) => {
   // Imagine to connect to a server and getting back the news. 
   setTimeout(() => {
+    // Here news is an object
     let news = [ 
       {
         id: 'news1',
@@ -32,10 +33,12 @@ let getLatestNews = (cb) => {
       }
     ];
     console.log('News fetched, now I can print them.');
-
-    if (cb) cb(news);
+    
+    if (cb) cb(news); // Here cb inside the bracket is the call for the function printNews
+                      // And we are passing the object news into the printNews function
 
   }, 2000);
 };
 
-getLatestNews();
+
+getLatestNews(printNews);

@@ -75,6 +75,12 @@ let hello = async () => {
 
 hello();
 
+// async and await work together to make asynchronous programming in 
+// JavaScript easier to read and write. async is used to declare a 
+// function that returns a Promise, and await is used to pause the execution 
+// of the function until a Promise is resolved or rejected. By using 
+// async and await, you can write asynchronous code that looks like 
+// synchronous code, which makes it easier to reason about and maintain.
 
 
 

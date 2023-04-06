@@ -148,6 +148,7 @@ console.log(a*b*c*d);
 luzernPopulation = a*b*c*d;
 console.log(luzernPopulation);
 
+
 // EXERCISE 3. Random numbers.
 //////////////////////////////
 
@@ -187,6 +188,7 @@ else {
 
 // a. Join together these two strings and assign the result to a new variable
 // named finalStr.
+luzernPopulation = 82000
 str1 = "Always remember that you are absolutely unique.";
 str2 = 'Just like everyone else.';
 finalStr = str1 + ' ' + str2;
@@ -207,12 +209,14 @@ finalStr = str1 + ' ' + str2;
 // d. Alternatively, you can specify strings using the backtick sign `
 // which allows for in-string variable substitution.
 finalStr = `${str1} Just like ${luzernPopulation} persons in Luzern.`;
+console.log(finalStr)
 
 // e. If you made it until now, you may prefer a more positive message
 // in the finalStr variable. Extract a substring which contains only
 // the first part.
 // Hint: Use substring and the length property.
 finalStr = finalStr.substring(0, str1.length);
+console.log(finalStr)
 
 // f. Now shout it loud and make the it upper case.
 // Hint: Use toUpperCase.

@@ -19,6 +19,7 @@ function printMyName() {
 console.log(typeof printMyName);
 printMyName();
 
+
 // EXERCISE 1. Input parameters.
 ////////////////////////////////
 
@@ -62,6 +63,7 @@ function printSentence2(person1, person2) {
 brendan = { first: 'Brendan', last: 'Eich', year: 1961 };
 linus = { first: 'Linus', last: 'Torvalds', year: 1969 };
 printSentence2(brendan, linus);
+
 
 // EXERCISE 2. Return values.
 /////////////////////////////
@@ -109,6 +111,7 @@ function printSentence() {
 }
 printSentence();
 
+
 // Certainly, this function is less general than the function with input
 // parameters, so the one with input parameters is the preferred
 // in most situations.
@@ -125,6 +128,8 @@ function whoIsYounger(person1, person2) {
 }
 whoIsYounger(brendan, linus);
 console.log(youngest);
+
+
 
 // c. You can think at the scope of a variable like a set of nested
 // Russian dolls (Matryoshkas). You don't know what is
@@ -150,25 +155,25 @@ function dollB() {
 
 dollA();
 console.log(commonVariable);
-console.log(privateVariableDollA); // Will throw an error.
+// console.log(privateVariableDollA); // Will throw an error.
 dollB();
 console.log(commonVariable);
-console.log(privateVariableDollB); // Will throw an error.
+// console.log(privateVariableDollB); // Will throw an error.
 
 // Modify the functions dollA and dollB so that no errors are thrown.
-
+commonVariable = 0;
 function dollA() {
     // Without "let" privateVariableDollA is added into the global space.
     privateVariableDollA = 10;
     commonVariable += privateVariableDollA;
-    console.log(privateVariableDollB); // Will throw an error.
+    // console.log(privateVariableDollB); // Will throw an error.
 }
 
 function dollB() {
     // Without "let" privateVariableDollB is added into the global space.
     privateVariableDollB = -10;
     commonVariable += privateVariableDollB;
-    console.log(privateVariableDollA); // Will throw an error.
+    // console.log(privateVariableDollA); // Will throw an error.
 }
 
 dollA();
@@ -202,7 +207,8 @@ function judgePerson(person, cb) {
     let str = person.first + ' ' + person.last + cb()
     console.log(str);
 }
-
+brendan = { first: 'Brendan', last: 'Eich', year: 1961 };
+linus = { first: 'Linus', last: 'Torvalds', year: 1969 };
 judgePerson(brendan, isGreat);
 judgePerson(brendan, isNotGreat);
 
@@ -220,6 +226,8 @@ judgePerson(brendan, isNotGreat);
 
 // Create a function that sorts the elements of the persons array from
 // youngest to older.
+brendan = { first: 'Brendan', last: 'Eich', year: 1961 };
+linus = { first: 'Linus', last: 'Torvalds', year: 1969 };
 persons = [ brendan, linus ];
 
 persons.sort(function(a, b) {
