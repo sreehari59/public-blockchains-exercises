@@ -22,6 +22,10 @@
 
 // npm i node-fetch --save
 
+// installs the node-fetch package from the 
+// Node Package Manager (npm) registry and saves it as a 
+// dependency in the package.json file of the current project with the --save flag
+
 
 // Exercise 2: Star Wars API.
 //////////////////////////////
