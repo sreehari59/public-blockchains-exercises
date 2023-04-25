@@ -44,9 +44,13 @@ const ethers = require("ethers");
 // parameters it needs (nested hint: you need something from the .env file).
 
 const providerKey = process.env.INFURA_KEY;
+console.log('Providers key: '+providerKey);
+console.log('process.env.INFURA_MAINNET: '+process.env.INFURA_MAINNET);
+const url = "https://mainnet.infura.io/v3/";
 
-const mainnetInfuraUrl = `${process.env.INFURA_MAINNET}${providerKey}`;
-// console.log(mainnetInfuraUrl);
+// Directly copy pasted the url from .env file since process.env.INFURA_MAINNET was giving undefined value
+const mainnetInfuraUrl = `${url}${providerKey}`;
+console.log('mainnetInfuraUrl: '+mainnetInfuraUrl);
 const mainnetProvider = new ethers.JsonRpcProvider(mainnetInfuraUrl);
 
 // b. Verify that the network's name is "mainnet" and the chain id that theis 1.
@@ -77,7 +81,7 @@ const network = async () => {
 };
 
 // which you can then call:
-// network();
+network();
 
 // The second (less compact) notation has the advantage that we can invoke
 // the code only when needed, so it is preferred in this exercise sheet.
@@ -110,7 +114,7 @@ const blockNum = async () => {
     console.log('Mainnet block number: ', blockNumber);
 };
 
-// blockNum();
+blockNum();
 
 // b. The Ethereum mainnet is one of the most secure blockchains in the world.
 // The testnets of Ethereum are a bit less secure because they might have 
@@ -120,8 +124,9 @@ const blockNum = async () => {
 // Connect to the Goerli test net, get the latest block number and print
 // the difference in chain length with mainnet.
 
-const goerliInfuraUrl = `${process.env.INFURA_GOERLI}${providerKey}`;
-// console.log(goerliInfuraUrl);
+
+const goerliInfuraUrl = `https://goerli.infura.io/v3/${providerKey}`;
+console.log("goerliInfuraUrl"+goerliInfuraUrl);
 const goerliProvider = new ethers.JsonRpcProvider(goerliInfuraUrl);
 
 
@@ -137,7 +142,7 @@ const blockDiff = async () => {
                 ' blocks ahead');
 }
 
-// blockDiff();
+blockDiff();
 
 
 // Exercise 3. Block time.
@@ -287,12 +292,12 @@ const blockInfo = async () => {
 const ens = async () => {
     let unimaAddress = await goerliProvider.resolveName('unima.eth');
     console.log(unimaAddress);
-
+    
     let ensName = await goerliProvider.lookupAddress(unimaAddress);
-    console.log(ensName);
+    console.log("Exercise 5 -> ENS name : "+ensName);
 };
 
-// ens();
+ens();
 
 
 // Exercise 6. Get ETH balance.
@@ -314,7 +319,7 @@ const balance = async (ensName = "unima.eth") => {
 
     // Get the balance for "unima.eth".
     let bal = await goerliProvider.getBalance(ensName);
-    // console.log(bal);
+    console.log(bal);
 
     // Nicely formatted.
     console.log(ensName, "has", ethers.formatEther(bal), "ETH");
@@ -360,10 +365,11 @@ const linkABI = require('../link_abi.json');
 const link = async () => {
     const contract = new ethers.Contract(linkAddress, linkABI, goerliProvider);
     const linkBalance = await contract.balanceOf("unima.eth");
+    console.log("Get the balance for LINK for unima.eth and vitalik.eth")
     console.log(ethers.formatEther(linkBalance));
 };
 
 
-// link();
+link();
 
 

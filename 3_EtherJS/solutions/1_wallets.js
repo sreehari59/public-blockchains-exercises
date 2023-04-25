@@ -206,6 +206,8 @@ const ethers = require("ethers");
 // a. Create a random wallet and print the address, the private key,
 // and the mnenomic phrase.
 
+// This is made possible with the Ethers package
+
 const wallet = ethers.Wallet.createRandom();
 
 console.log();
@@ -214,7 +216,7 @@ console.log("Private key:", wallet.privateKey);
 console.log("Mnemonic:", wallet.mnemonic.phrase);
 console.log();
 
-// exit();
+exit();
 
 // b. Bonus. Print the derivation path of the wallet and check that it is
 // equal to `baseDevPath`. 
@@ -223,7 +225,7 @@ exercise = '4b';
 
 let baseDevPath = "m/44'/60'/0'/0/";
 
-// Wait is the derication path? 
+// Wait is the derivation path? 
 // Basically, the mnemonic alone isn't enough to determine an address
 // and you need this extra bit of information. You may learn more here:
 // https://www.youtube.com/watch?v=tPCN3nDVzZI

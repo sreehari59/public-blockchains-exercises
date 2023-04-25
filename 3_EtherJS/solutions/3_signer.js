@@ -13,6 +13,11 @@
 
 // See: https://docs.ethers.org/v6/getting-started/
 
+function exit() {
+    process.exit(0);
+    console.log('I will not be printed to console :(');
+}
+
 // Exercise 0. Load dependencies and network provider.
 //////////////////////////////////////////////////////
 
@@ -25,9 +30,11 @@ const ethers = require("ethers");
 // b. Create a Goerli provider.
 
 const providerKey = process.env.INFURA_KEY;
+console.log("process.env.INFURA_KEY -> "+process.env.INFURA_KEY);
 
-const goerliInfuraUrl = `${process.env.INFURA_GOERLI}${providerKey}`;
+const goerliInfuraUrl = `https://goerli.infura.io/v3/${providerKey}`;
 const goerliProvider = new ethers.JsonRpcProvider(goerliInfuraUrl);
+console.log("goerliInfuraUrl -> "+goerliInfuraUrl);
 
 // Exercise 1. Create a Signer.
 ///////////////////////////////
@@ -44,7 +51,7 @@ const goerliProvider = new ethers.JsonRpcProvider(goerliInfuraUrl);
 // Hint2: if you get an error here, check that the private key begins with "0x".
 
 let signer = new ethers.Wallet(process.env.METAMASK_1_PRIVATE_KEY);
-console.log(signer.address);
+console.log("METAMASK_1_PRIVATE_KEY from .env file -> "+signer.address);
 
 // Exercise 2. Sign something.
 //////////////////////////////
@@ -55,6 +62,7 @@ const sign = async (message = 'Hello world') => {
     const signature = await signer.signMessage(message);
 
     const verifiedSigner = ethers.verifyMessage(message, signature);
+    console.log("verifiedSigner -> "+verifiedSigner);
     
     if (verifiedSigner === signer.address) {
         console.log('Signature is valid.');
@@ -76,6 +84,7 @@ const sign = async (message = 'Hello world') => {
 };
 
 // sign();
+
 
 // Exercise 3. Connect to the blockchain. 
 /////////////////////////////////////////
@@ -155,7 +164,7 @@ const sendTransaction = async () => {
     console.log('Balance for', account2, 'changed from', b2, 'to', updatedB2);
 };
 
-// sendTransaction();
+sendTransaction();
 
 
 // Exercise 5. Meddling with Gas.
@@ -220,7 +229,7 @@ const sendTransaction = async () => {
 
 // d. Now that you understand everything, send a new transaction that is just
 // a little cheaper in terms of gas, compared to defaults.
-// Get the suggested from `maxFeePerGas` from `getFeeData()` and then shave a
+// Get the suggested from `maxFeePerGas` from `getFeeData()` and then save a
 // few gweis.
 // Hint: `maxFeePerGas` is expressed in wei, and the value you get from 
 // `getFeeData()` is of type BigInt. To work with BigInt simply add n after
