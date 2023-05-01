@@ -1,12 +1,13 @@
 {
-  "dependencies": {
-    "@openzeppelin/contracts": "^4.8.2",
-    "dotenv": "^16.0.3",
-    "ethers": "^6.1.0",
-    "node-fetch": "^3.3.1",
-    "npx": "^10.2.2"
-  },
-  "devDependencies": {
-    "hardhat": "^2.13.0"
-  }
+  "name": "hardhat-project"
+  // "dependencies": {
+  //   "@openzeppelin/contracts": "^4.8.2",
+  //   "dotenv": "^16.0.3",
+  //   "ethers": "^6.1.0",
+  //   "node-fetch": "^3.3.1",
+  //   "npx": "^10.2.2"
+  // },
+  // "devDependencies": {
+  //   "hardhat": "^2.13.0"
+  // }
 }
